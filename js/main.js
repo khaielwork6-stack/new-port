@@ -224,8 +224,6 @@
     const hero = $('.hero'), word = $('.click-word'), ptr = $('.hero__pointer');
     const ripple = $('.hero__ripple'), sparkWrap = $('.hero__sparks'), sparks = $$('.hero__sparks i');
     const ctr = $('.hcard--ctr');
-    const clicks = $('[data-clicks]');
-    let clickCount = +clicks.dataset.countTo;
     let visible = true;
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(hero);
     sparks.forEach((s, i) => gsap.set(s, { rotation: (i / sparks.length) * 360 + 90 }));
@@ -252,7 +250,6 @@
           y: (i) => Math.sin((i / sparks.length) * Math.PI * 2) * 74,
         }, 'hit')
         .add(() => {
-          clicks.textContent = (++clickCount).toLocaleString('en-US');
           ctr.classList.add('is-pulse');
           setTimeout(() => ctr.classList.remove('is-pulse'), 900);
         }, 'hit')

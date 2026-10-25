@@ -103,8 +103,8 @@
         <div class="hcard hcard--ctr" data-depth="1.3"><div class="hcard__in">
           <span class="hcard__icon"><svg viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z"/></svg></span>
           <div>
-            <div class="hcard__val"><span data-count-to="1248" data-clicks>0</span></div>
-            <div class="hcard__lbl">Clicks</div>
+            <div class="hcard__val"><span data-count-to="4">0</span>x+</div>
+            <div class="hcard__lbl">ROAS on top ads</div>
           </div>
           <svg class="hcard__arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </div></div>
@@ -127,8 +127,8 @@
 
         <div class="hcard hcard--sales" data-depth="-1.2"><div class="hcard__in">
           <div>
-            <div class="hcard__lbl">Testing</div>
-            <div class="hcard__val">A · B · C</div>
+            <div class="hcard__lbl">Average ROAS</div>
+            <div class="hcard__val"><span data-count-to="3">0</span>x+</div>
           </div>
           <div class="hcard__bars"><i></i><i></i><i></i><i></i><i></i></div>
         </div></div>
@@ -215,6 +215,11 @@
         <span class="stat__l">Ad spend managed</span>
       </div>
       <div class="stat" data-reveal>
+        <span class="stat__k">Results</span>
+        <div class="stat__num" data-odo="3x+" aria-label="3x+ average ROAS">3x+</div>
+        <span class="stat__l">Average ROAS, with top ads above 4x</span>
+      </div>
+      <div class="stat" data-reveal>
         <span class="stat__k">Clients</span>
         <div class="stat__num" data-odo="10+" aria-label="10+">10+</div>
         <span class="stat__l">Roblox marketplaces worked with</span>
@@ -235,8 +240,8 @@
             <h2 class="h2" data-split>How I build <em>an ad.</em></h2>
           </div>
           <div class="work__aside" data-reveal>
-            <p>A real launch teaser, then the parts every ad is built from: hook, offer, format, variations and call to action.</p>
-            <div class="work__progress"><span class="work__count"><b>01</b> / 07</span><span class="work__bar"><i></i></span></div>
+            <p>Every ad I make is built from the same five parts: hook, offer, format, variations and call to action.</p>
+            <div class="work__progress"><span class="work__count"><b>01</b> / 06</span><span class="work__bar"><i></i></span></div>
           </div>
         </div>
 
@@ -244,20 +249,23 @@
           <div class="work__track">
 
             <!--
-              ADD YOUR OWN ADS HERE — copy this block and swap the YouTube ID + thumbnail.
-              data-yt   = the YouTube video ID (the part after watch?v= or /shorts/)
+              ADD YOUR OWN ADS HERE. Paste this block above the first card, swap the YouTube ID,
+              thumbnail and text, then renumber the cards after it.
+
+              <article class="reel reel--video">
+                <button class="reel__screen" type="button" data-yt="YOUTUBE_ID" data-ratio="9/16" data-cursor="Play" aria-label="Play: AD NAME">
+                  <img src="assets/work/THUMBNAIL.jpg" alt="" loading="lazy">
+                  <span class="reel__shade"></span>
+                  <span class="reel__badge">Featured</span>
+                  <span class="reel__play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                  <span class="reel__runtime">0:30</span>
+                </button>
+                <div class="reel__meta"><span>01</span><h3>AD NAME</h3><p>Client · 9:16</p></div>
+              </article>
+
+              data-yt    = the YouTube video ID (the part after watch?v= or /shorts/)
               data-ratio = "9/16" for Shorts/Reels/TikTok, "16/9" for regular YouTube
             -->
-            <article class="reel reel--video">
-              <button class="reel__screen" type="button" data-yt="nEvxHUqpaBs" data-ratio="9/16" data-cursor="Play" aria-label="Play: Martial Arts Battlegrounds launch teaser">
-                <img src="assets/work/mab-short.jpg" alt="" loading="lazy">
-                <span class="reel__shade"></span>
-                <span class="reel__badge">Featured cut</span>
-                <span class="reel__play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-                <span class="reel__runtime">0:41</span>
-              </button>
-              <div class="reel__meta"><span>01</span><h3>Launch teaser</h3><p>Martial Arts Battlegrounds · 9:16</p></div>
-            </article>
 
             <article class="reel reel--demo" data-live>
               <div class="reel__screen demo demo--hook">
@@ -270,7 +278,7 @@
                 </div>
                 <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Shop now</span></div>
               </div>
-              <div class="reel__meta"><span>02</span><h3>The hook</h3><p>Breakdown · the first 2 seconds</p></div>
+              <div class="reel__meta"><span>01</span><h3>The hook</h3><p>Breakdown · the first 2 seconds</p></div>
             </article>
 
             <article class="reel reel--demo" data-live>
@@ -286,7 +294,7 @@
                 <div class="offer__tape"><div><span>LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦&nbsp;</span><span>LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦&nbsp;</span></div></div>
                 <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Claim deal</span></div>
               </div>
-              <div class="reel__meta"><span>03</span><h3>The offer</h3><p>Breakdown · price, discount, urgency</p></div>
+              <div class="reel__meta"><span>02</span><h3>The offer</h3><p>Breakdown · price, discount, urgency</p></div>
             </article>
 
             <article class="reel reel--demo" data-live>
@@ -299,7 +307,7 @@
                   <span>4:5 <small>Meta</small></span>
                 </div>
               </div>
-              <div class="reel__meta"><span>04</span><h3>Every format</h3><p>Breakdown · 9:16, 1:1, 16:9, 4:5</p></div>
+              <div class="reel__meta"><span>03</span><h3>Every format</h3><p>Breakdown · 9:16, 1:1, 16:9, 4:5</p></div>
             </article>
 
             <article class="reel reel--demo" data-live>
@@ -312,7 +320,7 @@
                 </div>
                 <div class="var__caption">CTR by variant</div>
               </div>
-              <div class="reel__meta"><span>05</span><h3>Variations</h3><p>Breakdown · versions to test</p></div>
+              <div class="reel__meta"><span>04</span><h3>Variations</h3><p>Breakdown · versions to test</p></div>
             </article>
 
             <article class="reel reel--demo" data-live>
@@ -328,20 +336,20 @@
                 <span class="cta__plus">+1 order</span>
                 <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Shop now</span></div>
               </div>
-              <div class="reel__meta"><span>06</span><h3>The call to action</h3><p>Breakdown · one clear next step</p></div>
+              <div class="reel__meta"><span>05</span><h3>The call to action</h3><p>Breakdown · one clear next step</p></div>
             </article>
 
             <article class="reel reel--end">
               <div class="reel__screen">
                 <span class="end__orb"></span>
-                <p class="end__k">07 — Contact</p>
+                <p class="end__k">06 — Contact</p>
                 <h3 class="end__title">Want ads like <em>these?</em></h3>
                 <button class="btn btn--light" type="button" data-discord data-magnetic>
                   <span class="btn__label"><span data-text="Message me">Message me</span></span>
                   <svg class="btn__icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </button>
               </div>
-              <div class="reel__meta"><span>07</span><h3>Work with me</h3><p>Discord: cero.ads</p></div>
+              <div class="reel__meta"><span>06</span><h3>Work with me</h3><p>Discord: cero.ads</p></div>
             </article>
 
           </div>

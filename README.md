@@ -10,13 +10,15 @@ python -m http.server 5173
 
 ## Adding your ads
 
-Work reels live in `index.html` under `<!-- ADD YOUR OWN ADS HERE -->`. Copy the `reel--video` block and change:
+Work reels live in `index.html` under `<!-- ADD YOUR OWN ADS HERE -->`. That comment holds a ready-made `reel--video` block: paste it above the first card and change:
 
 - `data-yt`: the YouTube video ID
 - `data-ratio`: `9/16` for Shorts/Reels/TikTok, `16/9` for regular YouTube
 - the `<img>` thumbnail (put it in `assets/work/`)
 
-Update the `/ 07` counter text if you like (it's recalculated automatically on load).
+Renumber the cards after it. The `01 / 06` counter is recalculated automatically on load.
+
+Self-hosted clips (the organic section) use `data-video` for the full file and a `data-src` muted loop on the `<video>`.
 
 ## Stack
 

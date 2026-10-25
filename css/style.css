@@ -400,14 +400,14 @@ a.btn[href="#work"]:hover .btn__icon { transform: translateY(3px); }
 /* =========================================================
    STATS
    ========================================================= */
-.stats { display: grid; grid-template-columns: 1.35fr 1fr 1fr; border-top: 1px solid var(--line); padding-bottom: clamp(80px, 10vw, 140px); }
+.stats { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; border-top: 1px solid var(--line); padding-bottom: clamp(80px, 10vw, 140px); }
 .stat { padding: clamp(28px, 4vw, 48px) clamp(0px, 2vw, 32px) 0; border-left: 1px solid var(--line); }
 .stat:first-child { border-left: 0; padding-left: 0; }
 .stat__k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 .stat__num {
   display: flex; align-items: flex-start;
   font-family: var(--f-display); font-weight: 700; letter-spacing: -.06em;
-  font-size: clamp(4rem, 9.5vw, 9.5rem); line-height: 1; margin: 18px 0 14px;
+  font-size: clamp(3.6rem, 7vw, 7.4rem); line-height: 1; margin: 18px 0 14px;
 }
 .odo-col { display: inline-block; height: 1em; overflow: hidden; }
 .odo-strip { display: flex; flex-direction: column; will-change: transform; }
@@ -868,6 +868,11 @@ a.btn[href="#work"]:hover .btn__icon { transform: translateY(3px); }
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+@media (max-width: 1100px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 28px; }
+}
 @media (max-width: 1180px) {
   .hcard--eng, .hcard--sales { display: none; }
   .hcard--ctr { top: auto; bottom: 12%; left: 4%; }
@@ -919,6 +924,7 @@ a.btn[href="#work"]:hover .btn__icon { transform: translateY(3px); }
   .organic__item:nth-child(2) { margin-top: 44px; }
   .stats { grid-template-columns: 1fr; }
   .stat { border-left: 0; border-top: 1px solid var(--line); padding: 28px 0 8px; }
+  .stat:nth-child(n) { margin-top: 0; }
   .stat:first-child { border-top: 0; }
   .stat__num { margin: 10px 0 8px; }
   .checks { grid-template-columns: 1fr; }
