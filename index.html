@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cero.ads — Ads that make players click</title>
+  <meta name="description" content="Performance ad creatives for Roblox marketplaces. Scroll-stopping hooks, offers and motion that lower CAC and scale what wins.">
+  <meta name="theme-color" content="#050507">
+  <meta property="og:title" content="cero.ads — Ads that make players click">
+  <meta property="og:description" content="Performance ad creatives for Roblox marketplaces.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__panels"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="preloader__inner">
+      <div class="preloader__mark" data-chars>cero<b>.ads</b></div>
+      <div class="preloader__row">
+        <span class="preloader__tag">Loading the good stuff</span>
+        <span class="preloader__count"><span data-count>0</span>%</span>
+      </div>
+      <div class="preloader__bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- Cursor, grain, toast -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="nav__pill">
+      <a class="nav__logo" href="#top" aria-label="cero.ads home">cero<b>.ads</b></a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <span class="nav__status"><i></i>Booking new drops</span>
+      <button class="btn btn--light btn--sm" type="button" data-discord data-magnetic>
+        <span class="btn__label"><span data-text="Let's talk">Let's talk</span></span>
+      </button>
+      <span class="nav__progress" aria-hidden="true"><i></i></span>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-live>
+      <canvas class="hero__gl" aria-hidden="true"></canvas>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <svg class="hero__chart" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="chartStroke" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#2f6bff" stop-opacity="0"/>
+            <stop offset=".35" stop-color="#2f6bff"/>
+            <stop offset=".75" stop-color="#3fd4ff"/>
+            <stop offset="1" stop-color="#ffffff"/>
+          </linearGradient>
+          <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#2f6bff" stop-opacity=".28"/>
+            <stop offset="1" stop-color="#2f6bff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="barFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#3f7bff" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#3f7bff" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <g class="hero__bars">
+          <rect x="980" y="330" width="26" height="190" rx="3"/>
+          <rect x="1030" y="300" width="26" height="220" rx="3"/>
+          <rect x="1080" y="250" width="26" height="270" rx="3"/>
+          <rect x="1130" y="270" width="26" height="250" rx="3"/>
+          <rect x="1180" y="200" width="26" height="320" rx="3"/>
+          <rect x="1230" y="150" width="26" height="370" rx="3"/>
+          <rect x="1280" y="170" width="26" height="350" rx="3"/>
+          <rect x="1330" y="100" width="26" height="420" rx="3"/>
+          <rect x="1380" y="60" width="26" height="460" rx="3"/>
+        </g>
+        <path class="hero__area" d="M0,480 C120,476 200,452 300,458 S460,410 560,418 S700,350 790,330 S900,352 990,282 S1130,214 1210,170 S1350,86 1440,30 L1440,520 L0,520 Z" fill="url(#chartFill)"/>
+        <path class="hero__line hero__line--glow" d="M0,480 C120,476 200,452 300,458 S460,410 560,418 S700,350 790,330 S900,352 990,282 S1130,214 1210,170 S1350,86 1440,30" stroke="url(#chartStroke)" filter="url(#glow)"/>
+        <path class="hero__line" id="heroLine" d="M0,480 C120,476 200,452 300,458 S460,410 560,418 S700,350 790,330 S900,352 990,282 S1130,214 1210,170 S1350,86 1440,30" stroke="url(#chartStroke)"/>
+        <circle class="hero__dot-glow" r="16" cx="0" cy="480"/>
+        <circle class="hero__dot" r="5" cx="0" cy="480"/>
+      </svg>
+
+      <div class="hero__cards" aria-hidden="true">
+        <div class="hcard hcard--ctr" data-depth="1.3"><div class="hcard__in">
+          <span class="hcard__icon"><svg viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z"/></svg></span>
+          <div>
+            <div class="hcard__val">+<span data-count-to="35">0</span>%</div>
+            <div class="hcard__lbl">Click-through rate</div>
+          </div>
+          <svg class="hcard__arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </div></div>
+
+        <div class="hcard hcard--conv" data-depth="-0.9"><div class="hcard__in">
+          <span class="hcard__icon"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(15 12 12)"/><rect x="10" y="10" width="4" height="4" transform="rotate(15 12 12)" class="hole"/></svg></span>
+          <div>
+            <div class="hcard__val">+<span data-count-to="19">0</span>%</div>
+            <div class="hcard__lbl">Conversion</div>
+          </div>
+          <svg class="hcard__arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </div></div>
+
+        <div class="hcard hcard--eng" data-depth="0.7"><div class="hcard__in">
+          <svg class="hcard__donut" viewBox="0 0 44 44"><circle cx="22" cy="22" r="17"/><circle class="arc" cx="22" cy="22" r="17" pathLength="100"/></svg>
+          <div>
+            <div class="hcard__val"><span data-count-to="78">0</span>%</div>
+            <div class="hcard__lbl">Engagement</div>
+          </div>
+        </div></div>
+
+        <div class="hcard hcard--sales" data-depth="-1.2"><div class="hcard__in">
+          <div>
+            <div class="hcard__lbl">Gamepass sales</div>
+            <div class="hcard__val">+<span data-count-to="56">0</span>%</div>
+          </div>
+          <div class="hcard__bars"><i></i><i></i><i></i><i></i><i></i></div>
+        </div></div>
+
+        <div class="hcard hcard--players" data-depth="1"><div class="hcard__in">
+          <div>
+            <div class="hcard__lbl">Active players</div>
+            <div class="hcard__val"><span data-count-to="230">0</span>K</div>
+          </div>
+          <svg class="hcard__spark" viewBox="0 0 80 30"><path d="M1 26 L12 22 L22 24 L33 15 L44 18 L55 9 L66 11 L79 2"/></svg>
+        </div></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow"><i></i>Performance ad creatives · Roblox marketplaces</p>
+        <h1 class="hero__title" data-split>
+          <span class="line">Ads that make</span>
+          <span class="line">players <em class="click-word">click.</em></span>
+        </h1>
+        <p class="hero__sub">Scroll-stopping creatives that lower CAC and scale what wins.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--light" href="#work" data-magnetic>
+            <span class="btn__label"><span data-text="See the work">See the work</span></span>
+            <svg class="btn__icon" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+          <button class="btn btn--ghost" type="button" data-discord data-magnetic>
+            <svg class="btn__icon btn__icon--discord" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            <span class="btn__label"><span data-text="cero.ads on Discord">cero.ads on Discord</span></span>
+          </button>
+        </div>
+      </div>
+
+      <svg class="hero__pointer" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 3l17 9.5-7.4 1.6L11 21z"/></svg>
+      <span class="hero__ripple" aria-hidden="true"></span>
+      <span class="hero__sparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+
+      <a class="hero__scroll" href="#trusted" aria-label="Scroll down"><span>Scroll</span><i></i></a>
+    </section>
+
+    <!-- ============ TAPES ============ -->
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape--a" data-marquee="-1">
+        <div class="tape__track">
+          <span>Meta</span><b>✦</b><span>TikTok</span><b>✦</b><span>YouTube</span><b>✦</b><span>Google</span><b>✦</b><span>Snapchat</span><b>✦</b><span>X</span><b>✦</b><span>Roblox</span><b>✦</b>
+        </div>
+      </div>
+      <div class="tape tape--b" data-marquee="1">
+        <div class="tape__track">
+          <span>Hooks</span><b>✦</b><span>Offers</span><b>✦</b><span>Motion</span><b>✦</b><span>Variants</span><b>✦</b><span>CTAs</span><b>✦</b><span>Scale</span><b>✦</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TRUSTED ============ -->
+    <section class="trusted container" id="trusted">
+      <div class="section-head section-head--center">
+        <p class="eyebrow" data-reveal><i></i>Trusted by</p>
+        <h2 class="h2" data-split>The marketplaces players <em>actually shop.</em></h2>
+      </div>
+      <div class="trusted__grid">
+        <div class="brand" style="--brand:#b14dff; --brand2:#ff9cf5" data-tilt data-reveal>
+          <span class="brand__glow"></span>
+          <span class="brand__orb"></span>
+          <img src="assets/logos/bloxcart.png" alt="Bloxcart" width="1280" height="284" loading="lazy">
+          <span class="brand__tag">Roblox marketplace</span>
+          <span class="brand__idx">01</span>
+        </div>
+        <div class="brand" style="--brand:#ff4fa3; --brand2:#ff8a3d" data-tilt data-reveal>
+          <span class="brand__glow"></span>
+          <span class="brand__orb"></span>
+          <img src="assets/logos/neonpets.png" alt="NeonPets" width="1280" height="276" loading="lazy">
+          <span class="brand__tag">Roblox marketplace</span>
+          <span class="brand__idx">02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats container" aria-label="Results">
+      <div class="stat" data-reveal>
+        <span class="stat__k">Update-day performance</span>
+        <div class="stat__num" data-odo="$300K+" aria-label="$300K+">$300K+</div>
+        <span class="stat__l">Ad spend managed</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__k">Trusted by</span>
+        <div class="stat__num" data-odo="10+" aria-label="10+">10+</div>
+        <span class="stat__l">Major marketplaces</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__k">Expertise</span>
+        <div class="stat__num" data-odo="5+" aria-label="5+">5+</div>
+        <span class="stat__l">Years creating &amp; managing ad creatives</span>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="work__pin">
+        <div class="work__head container">
+          <div>
+            <p class="eyebrow" data-reveal><i></i>What we make</p>
+            <h2 class="h2" data-split>Built to stop <em>the scroll.</em></h2>
+          </div>
+          <div class="work__aside" data-reveal>
+            <p>Hooks, offers, pacing, formats. Every frame engineered for the click.</p>
+            <div class="work__progress"><span class="work__count"><b>01</b> / 07</span><span class="work__bar"><i></i></span></div>
+          </div>
+        </div>
+
+        <div class="work__viewport">
+          <div class="work__track">
+
+            <!--
+              ADD YOUR OWN ADS HERE — copy this block and swap the YouTube ID + thumbnail.
+              data-yt   = the YouTube video ID (the part after watch?v= or /shorts/)
+              data-ratio = "9/16" for Shorts/Reels/TikTok, "16/9" for regular YouTube
+            -->
+            <article class="reel reel--video">
+              <button class="reel__screen" type="button" data-yt="nEvxHUqpaBs" data-ratio="9/16" data-cursor="Play" aria-label="Play: game launch short">
+                <img src="assets/work/mab-short.jpg" alt="" loading="lazy">
+                <span class="reel__shade"></span>
+                <span class="reel__badge">Featured cut</span>
+                <span class="reel__play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="reel__runtime">0:41</span>
+              </button>
+              <div class="reel__meta"><span>01</span><h3>Game launch short</h3><p>Roblox · 9:16</p></div>
+            </article>
+
+            <article class="reel reel--demo" data-live>
+              <div class="reel__screen demo demo--hook">
+                <div class="rc-top"><i></i><i></i><i></i></div>
+                <div class="hook__flash"></div>
+                <div class="hook__stage">
+                  <span class="hook__w hook__w--1">STOP.</span>
+                  <span class="hook__w hook__w--2">SCROLL<br>ING.</span>
+                  <span class="hook__timer"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26"/><circle class="t" cx="30" cy="30" r="26" pathLength="100"/></svg><b>0.8s</b><small>to hook</small></span>
+                </div>
+                <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Shop now</span></div>
+              </div>
+              <div class="reel__meta"><span>02</span><h3>The 0.8s hook</h3><p>Fast openings</p></div>
+            </article>
+
+            <article class="reel reel--demo" data-live>
+              <div class="reel__screen demo demo--offer">
+                <div class="rc-top"><i></i><i></i><i></i></div>
+                <div class="offer__rays"></div>
+                <div class="offer__stage">
+                  <span class="offer__label">Today only</span>
+                  <span class="offer__old">$9.99<i></i></span>
+                  <span class="offer__new">$4.99</span>
+                  <span class="offer__sticker">-50%</span>
+                </div>
+                <div class="offer__tape"><div><span>LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦&nbsp;</span><span>LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦ LIMITED DROP ✦&nbsp;</span></div></div>
+                <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Claim deal</span></div>
+              </div>
+              <div class="reel__meta"><span>03</span><h3>Offer-first</h3><p>Messaging that sells</p></div>
+            </article>
+
+            <article class="reel reel--demo" data-live>
+              <div class="reel__screen demo demo--formats">
+                <div class="fmt__frame"><span class="fmt__play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></div>
+                <div class="fmt__labels">
+                  <span>9:16 <small>Shorts · Reels · TikTok</small></span>
+                  <span>1:1 <small>Feed</small></span>
+                  <span>16:9 <small>YouTube</small></span>
+                  <span>4:5 <small>Meta</small></span>
+                </div>
+              </div>
+              <div class="reel__meta"><span>04</span><h3>Every ratio</h3><p>Platform-native cuts</p></div>
+            </article>
+
+            <article class="reel reel--demo" data-live>
+              <div class="reel__screen demo demo--variants">
+                <div class="var__grid">
+                  <div class="var var--a"><b>A</b><span class="var__bar"><i></i></span><small>2.1%</small></div>
+                  <div class="var var--b"><b>B</b><span class="var__bar"><i></i></span><small>3.4%</small></div>
+                  <div class="var var--c"><b>C</b><span class="var__bar"><i></i></span><small>5.8%</small><em>Winner</em></div>
+                  <div class="var var--d"><b>D</b><span class="var__bar"><i></i></span><small>1.7%</small></div>
+                </div>
+                <div class="var__caption">CTR by variant</div>
+              </div>
+              <div class="reel__meta"><span>05</span><h3>Tested variants</h3><p>Openings · offers · pacing</p></div>
+            </article>
+
+            <article class="reel reel--demo" data-live>
+              <div class="reel__screen demo demo--cta">
+                <div class="rc-top"><i></i><i></i><i></i></div>
+                <div class="cta__item">
+                  <span class="cta__gem"></span>
+                  <span class="cta__name">Legendary bundle</span>
+                  <span class="cta__stars">★★★★★</span>
+                </div>
+                <span class="cta__btn">Shop now <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                <span class="cta__tap"></span>
+                <span class="cta__plus">+1 order</span>
+                <div class="rc-bottom"><span class="rc-av"></span><span class="rc-name">your.brand<small>Sponsored</small></span><span class="rc-cta">Shop now</span></div>
+              </div>
+              <div class="reel__meta"><span>06</span><h3>CTAs that convert</h3><p>Clear next step</p></div>
+            </article>
+
+            <article class="reel reel--end">
+              <div class="reel__screen">
+                <span class="end__orb"></span>
+                <p class="end__k">07 — Your turn</p>
+                <h3 class="end__title">Your next <em>winner</em> starts here.</h3>
+                <button class="btn btn--light" type="button" data-discord data-magnetic>
+                  <span class="btn__label"><span data-text="Start a project">Start a project</span></span>
+                  <svg class="btn__icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+              <div class="reel__meta"><span>07</span><h3>Let's build it</h3><p>Slots open</p></div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process container" id="process">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><i></i>How we work</p>
+        <h2 class="h2" data-split>From research<br> to <em>drop day.</em></h2>
+        <p class="section-sub" data-reveal>Full release or major update — build hype before the drop, own the traffic when it hits.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step" style="--i:0">
+          <div class="step__in">
+            <div class="step__text">
+              <span class="step__num">01</span>
+              <h3>Market research</h3>
+              <ul class="chips">
+                <li>Competitor creatives</li><li>Top offers</li><li>Ad fatigue</li><li>Player demographics</li><li>Winning hooks</li><li>Trends</li>
+              </ul>
+              <p class="step__result"><span>Result</span>A creative strategy backed by data.</p>
+            </div>
+            <div class="step__vis vis-radar" data-live>
+              <div class="radar">
+                <span class="radar__ring"></span><span class="radar__ring"></span><span class="radar__ring"></span>
+                <span class="radar__cross"></span>
+                <span class="radar__sweep"></span>
+                <span class="blip" style="--x:28%;--y:30%;--d:.2s">Hooks</span>
+                <span class="blip" style="--x:70%;--y:24%;--d:.9s">Offers</span>
+                <span class="blip" style="--x:78%;--y:62%;--d:1.6s">Trends</span>
+                <span class="blip" style="--x:40%;--y:76%;--d:2.3s">Fatigue</span>
+                <span class="blip" style="--x:18%;--y:58%;--d:3s">Players</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="step" style="--i:1">
+          <div class="step__in">
+            <div class="step__text">
+              <span class="step__num">02</span>
+              <h3>Creative production</h3>
+              <ul class="chips">
+                <li>Fast hooks</li><li>Offer-first messaging</li><li>Visual hierarchy</li><li>Motion graphics</li><li>Strong CTAs</li><li>Platform-native</li>
+              </ul>
+              <p class="step__result"><span>Result</span>Ads engineered for clicks.</p>
+            </div>
+            <div class="step__vis vis-edit" data-live>
+              <div class="edit__preview">
+                <span class="edit__word">HOOK</span><span class="edit__word">OFFER</span><span class="edit__word">CTA</span>
+                <span class="edit__rec">● REC</span>
+              </div>
+              <div class="edit__tl">
+                <span class="edit__ruler"></span>
+                <div class="edit__track"><b>V1</b><i style="--l:0.02;--w:0.30"></i><i style="--l:0.34;--w:0.28"></i><i style="--l:0.65;--w:0.33"></i></div>
+                <div class="edit__track"><b>V2</b><i style="--l:0.12;--w:0.16"></i><i style="--l:0.46;--w:0.22"></i><i style="--l:0.80;--w:0.14"></i></div>
+                <div class="edit__track edit__track--fx"><b>FX</b><i style="--l:0.04;--w:0.08"></i><i style="--l:0.33;--w:0.06"></i><i style="--l:0.64;--w:0.07"></i><i style="--l:0.88;--w:0.09"></i></div>
+                <div class="edit__track edit__track--au"><b>A1</b><span class="wave"></span></div>
+                <span class="edit__head"></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="step" style="--i:2">
+          <div class="step__in">
+            <div class="step__text">
+              <span class="step__num">03</span>
+              <h3>Testing</h3>
+              <ul class="chips">
+                <li>Openings</li><li>Offers</li><li>Headlines</li><li>Pacing</li><li>Thumbnails</li>
+              </ul>
+              <p class="step__result"><span>Result</span>More winners. Less wasted spend.</p>
+            </div>
+            <div class="step__vis vis-race" data-live>
+              <div class="race">
+                <div class="race__row" style="--w:46%;--d:0s"><b>Hook A</b><span><i></i></span></div>
+                <div class="race__row race__row--win" style="--w:92%;--d:.15s"><b>Hook B</b><span><i></i></span><em>Winner</em></div>
+                <div class="race__row" style="--w:63%;--d:.3s"><b>Hook C</b><span><i></i></span></div>
+                <div class="race__row" style="--w:31%;--d:.45s"><b>Hook D</b><span><i></i></span></div>
+                <div class="race__row" style="--w:55%;--d:.6s"><b>Hook E</b><span><i></i></span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="step" style="--i:3">
+          <div class="step__in">
+            <div class="step__text">
+              <span class="step__num">04</span>
+              <h3>Scale what wins</h3>
+              <ul class="chips">
+                <li>Winning hooks</li><li>Winning visuals</li><li>Winning messaging</li><li>Winning formats</li>
+              </ul>
+              <p class="step__result"><span>Result</span>Higher ROAS. Lower CAC. Profitable scale.</p>
+            </div>
+            <div class="step__vis vis-scale" data-live>
+              <svg class="scale__chart" viewBox="0 0 400 240" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="scaleFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a855f7" stop-opacity=".45"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></linearGradient>
+                  <linearGradient id="scaleStroke" x1="0" x2="1"><stop offset="0" stop-color="#2f6bff"/><stop offset=".6" stop-color="#a855f7"/><stop offset="1" stop-color="#ff4fa3"/></linearGradient>
+                </defs>
+                <g class="scale__grid"><line x1="0" x2="400" y1="60" y2="60"/><line x1="0" x2="400" y1="120" y2="120"/><line x1="0" x2="400" y1="180" y2="180"/></g>
+                <path class="scale__area" d="M0,220 C60,215 90,200 130,190 S200,160 240,130 S320,80 400,20 L400,240 L0,240 Z" fill="url(#scaleFill)"/>
+                <path class="scale__line" d="M0,220 C60,215 90,200 130,190 S200,160 240,130 S320,80 400,20" stroke="url(#scaleStroke)" pathLength="100"/>
+              </svg>
+              <span class="pill pill--up" style="--x:12%;--y:14%">ROAS <b>↑</b></span>
+              <span class="pill pill--down" style="--x:44%;--y:58%">CAC <b>↓</b></span>
+              <span class="pill pill--up" style="--x:62%;--y:30%">Profit <b>↑</b></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement container">
+      <p class="statement__text" data-words>
+        Winning creatives aren't <span class="strike">luck.</span> They're <em>tested.</em>
+      </p>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="pricing container" id="pricing">
+      <div class="pricing__left">
+        <p class="eyebrow" data-reveal><i></i>Pricing</p>
+        <h2 class="h2" data-split>One partner. <em>The whole</em> creative stack.</h2>
+        <div class="price" data-reveal>
+          <span class="price__k">Starting from</span>
+          <span class="price__v">$<span data-price="1000">1,000</span></span>
+        </div>
+        <button class="btn btn--grad" type="button" data-discord data-magnetic data-reveal>
+          <span class="btn__label"><span data-text="Book a project">Book a project</span></span>
+          <svg class="btn__icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <div class="pricing__card" data-reveal>
+        <span class="pricing__border" aria-hidden="true"></span>
+        <div class="pricing__inner">
+          <p class="pricing__k">Every cut includes</p>
+          <ul class="checks">
+            <li>Structured intro hook</li>
+            <li>Cinematic editing &amp; pacing</li>
+            <li>Clean transitions</li>
+            <li>Music sync</li>
+            <li>Gameplay showcase</li>
+            <li>HD delivery</li>
+          </ul>
+          <p class="pricing__k">On the menu</p>
+          <ul class="chips chips--pop">
+            <li>Creative strategy</li><li>Ad concepts</li><li>Performance scripting</li><li>Ad copy</li><li>Video editing</li><li>Motion graphics</li><li>Platform optimization</li><li>Multiple aspect ratios</li><li>Static &amp; video</li><li>Creative variations</li><li>Source files</li><li>Fast revisions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq container" id="faq">
+      <div class="faq__head">
+        <p class="eyebrow" data-reveal><i></i>FAQ</p>
+        <h2 class="h2" data-split>Questions? <em>Answered.</em></h2>
+      </div>
+      <div class="faq__list">
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">Do you source the footage and assets?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>Yes — gameplay, visuals, stock, SFX. Or we use your brand assets to keep everything on-brand.</p></div>
+        </div>
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">Which platforms do you create for?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>Google Ads, YouTube, TikTok, Meta, Snapchat, X and Roblox — each built to its own best practices.</p></div>
+        </div>
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">Can you work under NDA?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>Yes. Happy to sign one before we start.</p></div>
+        </div>
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">Can you improve our existing ads?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>Yes. We rework your current creatives around your performance data.</p></div>
+        </div>
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">We've never advertised before. Is that okay?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>Totally. We'll pick the right formats and launch you on a solid foundation.</p></div>
+        </div>
+        <div class="qa" data-reveal>
+          <button class="qa__q" type="button" aria-expanded="false">Is this a long-term commitment?<span class="qa__icon"></span></button>
+          <div class="qa__a"><p>No contracts. One campaign, one launch, or ongoing — we earn repeat work with results.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__cta container">
+      <p class="eyebrow" data-reveal><i></i>Slots are limited</p>
+      <h2 class="footer__title" data-split>Let's make drop day <em>loud.</em></h2>
+      <div class="footer__actions" data-reveal>
+        <button class="btn btn--light btn--lg" type="button" data-discord data-magnetic>
+          <svg class="btn__icon btn__icon--discord" viewBox="0 0 24 24"><use href="#discord"/></svg>
+          <span class="btn__label"><span data-text="Add cero.ads on Discord">Add cero.ads on Discord</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="footer__mark" aria-hidden="true"><span>cero.ads</span></div>
+    <div class="footer__bar container">
+      <span>© <span data-year>2026</span> cero.ads</span>
+      <span>Performance creatives for Roblox marketplaces</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Video modal -->
+  <dialog class="modal" aria-label="Video player">
+    <div class="modal__frame"></div>
+    <button class="modal__close" type="button" aria-label="Close video">✕</button>
+  </dialog>
+
+  <!-- Shared icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="discord" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></symbol>
+  </svg>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/hero-gl.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
