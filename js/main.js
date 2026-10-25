@@ -178,7 +178,7 @@
 
   function countUp(el, to, duration = 2.2) {
     const o = { v: 0 };
-    gsap.to(o, { v: to, duration, ease: 'power3.out', onUpdate: () => { el.textContent = Math.round(o.v); } });
+    gsap.to(o, { v: to, duration, ease: 'power3.out', onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString('en-US'); } });
   }
 
   function heroIntro() {
@@ -196,7 +196,7 @@
       .from('.hero__area', { opacity: 0, duration: 2 }, 1.2)
       .add(() => {
         $$('[data-count-to]').forEach((el) => countUp(el, +el.dataset.countTo));
-        gsap.to('.hcard__donut .arc', { strokeDasharray: '78 100', duration: 2.2, ease: 'power3.out' });
+        gsap.to('.hcard__donut .arc', { strokeDasharray: '100 0', duration: 2.2, ease: 'power3.out' });
       }, 0.7)
       .from('.hero__scroll', { opacity: 0, duration: 1 }, 1.2)
       .add(() => {
@@ -224,6 +224,8 @@
     const hero = $('.hero'), word = $('.click-word'), ptr = $('.hero__pointer');
     const ripple = $('.hero__ripple'), sparkWrap = $('.hero__sparks'), sparks = $$('.hero__sparks i');
     const ctr = $('.hcard--ctr');
+    const clicks = $('[data-clicks]');
+    let clickCount = +clicks.dataset.countTo;
     let visible = true;
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(hero);
     sparks.forEach((s, i) => gsap.set(s, { rotation: (i / sparks.length) * 360 + 90 }));
@@ -249,7 +251,11 @@
           x: (i) => Math.cos((i / sparks.length) * Math.PI * 2) * 74,
           y: (i) => Math.sin((i / sparks.length) * Math.PI * 2) * 74,
         }, 'hit')
-        .add(() => { ctr.classList.add('is-pulse'); setTimeout(() => ctr.classList.remove('is-pulse'), 900); }, 'hit')
+        .add(() => {
+          clicks.textContent = (++clickCount).toLocaleString('en-US');
+          ctr.classList.add('is-pulse');
+          setTimeout(() => ctr.classList.remove('is-pulse'), 900);
+        }, 'hit')
         .to(ptr, { x: '+=110', y: '+=80', opacity: 0, duration: 0.9, ease: 'power2.in' }, 'hit+=.7');
     }
     gsap.delayedCall(0.6, run);
