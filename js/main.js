@@ -494,13 +494,14 @@
   /* ---------- video modal ---------- */
   function setupModal() {
     const modal = $('.modal'), frame = $('.modal__frame');
-    const open = (html, vertical) => {
+    const open = (html, vertical, compact = false) => {
       frame.classList.toggle('is-vertical', vertical);
+      frame.classList.toggle('is-compact', compact);
       frame.innerHTML = html;
       modal.showModal();
       modalOpen = true;
       if (lenis) lenis.stop();
-      $$('.ophone video').forEach((v) => v.pause());
+      $$('.organic video').forEach((v) => v.pause());
     };
     $$('[data-yt]').forEach((b) => b.addEventListener('click', () => {
       const id = encodeURIComponent(b.dataset.yt);
@@ -508,7 +509,8 @@
     }));
     // Self-hosted clips (organic cuts) play with sound in the same player.
     $$('[data-video]').forEach((b) => b.addEventListener('click', () => {
-      open(`<video src="${b.dataset.video}" controls autoplay playsinline></video>`, (b.dataset.ratio || '9/16') === '9/16');
+      const vertical = (b.dataset.ratio || '9/16') === '9/16';
+      open(`<video src="${b.dataset.video}" controls autoplay playsinline></video>`, vertical, !vertical);
     }));
     $('.modal__close').addEventListener('click', () => modal.close());
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
@@ -516,7 +518,7 @@
       frame.innerHTML = '';
       modalOpen = false;
       if (lenis) lenis.start();
-      $$('.ophone video').forEach((v) => {
+      $$('.organic video').forEach((v) => {
         const r = v.getBoundingClientRect();
         if (!reduce && v.getAttribute('src') && r.bottom > 0 && r.top < innerHeight) v.play().catch(() => {});
       });
@@ -525,7 +527,7 @@
 
   /* ---------- organic cuts: muted preview loops only load + play while on screen ---------- */
   function setupOrganic() {
-    const vids = $$('.ophone video');
+    const vids = $$('.organic video');
     if (!vids.length) return;
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -537,6 +539,10 @@
       });
     }, { rootMargin: '150px' });
     vids.forEach((v) => io.observe(v));
+    gsap.from('.organic__wide', {
+      y: 60, opacity: 0, duration: 1.4, ease: 'expo.out',
+      scrollTrigger: { trigger: '.organic__wide', start: 'top 90%', once: true },
+    });
     gsap.from('.organic__item', {
       y: 90, opacity: 0, duration: 1.4, stagger: 0.14, ease: 'expo.out',
       scrollTrigger: { trigger: '.organic__phones', start: 'top 85%', once: true },
